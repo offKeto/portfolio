@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color1: #000004;
+  --color2: #00172b;
+  --color3: #002d52;
+  --color4: #00467e;
+  --color5: #0061ad;
+  --font-menu: 'Exo 2', sans-serif;
+  --font-slogan: 'Playwrite AU QLD', sans-serif;
+  --font-text: 'Josefin Sans', sans-serif;
+  --font-title: 'Bevan', sans-serif;
+}
