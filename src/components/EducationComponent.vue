@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col xl:mx-50 pb-20 mx-5 md:mx-20 text-justify pt-10 gap-4"
+    class="flex flex-col xl:mx-50 md:pb-20 mx-5 md:mx-20 text-justify pt-10 gap-4"
   >
     <h1
-      class="text-3xl md:text-4xl text-center font-(family-name:--font-title) tracking-wider"
+      class="text-4xl md:text-4xl text-center font-(family-name:--font-title) tracking-wider"
     >
       Education
     </h1>

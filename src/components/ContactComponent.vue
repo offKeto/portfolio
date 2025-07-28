@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col xl:mx-50 mx-5 md:mx-20 text-justify pt-10 gap-4 pb-10"
+    class="flex flex-col xl:mx-50 mx-5 md:mx-20 text-justify pt-10 gap-4 pb-15"
   >
     <h1
       class="text-4xl text-center font-(family-name:--font-title) tracking-wider"

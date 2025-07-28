@@ -1,9 +1,11 @@
 <template>
-  <div class="flex flex-col pt-30 pb-20 gap-5 justify-center items-center">
+  <div
+    class="flex flex-col pt-10 xl:pt-30 md:pt-20 md:pb-20 gap-5 justify-center items-center"
+  >
     <img
       src="/src/assets/img.webp"
       alt="Image of Derek"
-      class="w-32 h-32 md:w-40 md:h-40 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
+      class="w-40 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
     />
     <h1
       class="xl:text-2xl text-xl flex mx-20 flex-col md:flex-row items-center text-justify gap-4"
@@ -11,7 +13,7 @@
       <!-- GitHub Logo -->
       <a href="https://github.com/offKeto" target="_blank">
         <svg
-          class="hover:scale-110 transition-transform duration-200 w-14 h-14 xl:w-24 md:h-24"
+          class="hover:scale-110 transition-transform duration-200 w-20 md:h-28 xl:w-36"
           viewBox="0 0 20 20"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +41,7 @@
           </g>
         </svg>
       </a>
-      Hi there! I'm Derek and I'm just a passionate amateur web developer.
+      Hi there! I'm Derek and I'm just a trainee amateur web developer.
     </h1>
     <p
       class="xl:text-xl text-lg mx-5 text-center font-(family-name:--font-slogan) tracking-widest font-extralight"

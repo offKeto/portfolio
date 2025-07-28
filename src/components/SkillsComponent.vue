@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col xl:mx-50 pb-20 mx-5 md:mx-20 text-justify pt-10">
+  <div class="flex flex-col xl:mx-50 md:pb-20 mx-5 md:mx-20 text-justify pt-10">
     <h1
       class="text-4xl text-center font-(family-name:--font-title) tracking-wider mb-8"
     >
