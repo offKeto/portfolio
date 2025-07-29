@@ -5,31 +5,32 @@ import MenuComponent from './components/MenuComponent.vue';
 import SkillsComponent from './components/SkillsComponent.vue';
 import EducationComponent from './components/EducationComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
+import Lenis from 'lenis';
+
+const lenis = new Lenis({
+  lerp: 0.05,
+  smooth: true,
+});
 
 function scrollTo(id) {
   const el = document.getElementById(id);
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
+    lenis.scrollTo(el, {
+      immediate: false,
+      duration: 1,
+      easing: (t) => t,
+    });
     el.classList.add('section-enter');
-    setTimeout(() => el.classList.remove('section-enter'), 200);
+    setTimeout(() => el.classList.remove('section-enter'), 100);
   }
 }
 
 onMounted(() => {
-  if (window.VANTA && window.VANTA.FOG) {
-    window.VANTA.FOG({
-      el: '#background',
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      highlightColor: '#00467e',
-      midtoneColor: '#002d52',
-      lowlightColor: '#00172b',
-      baseColor: '#000004',
-    });
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
   }
+  requestAnimationFrame(raf);
 });
 </script>
 

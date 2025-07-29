@@ -1,0 +1,38 @@
+{
+  "Menu": {
+    "AboutMe": "Sobre mí",
+    "Skills": "Habilidades técnicas",
+    "Education": "Educación",
+    "Contact": "Contacto"
+  },
+  "AboutMe": {
+    "introduction": "¡Hola! Soy Derek y soy un joven desarrollador web en formación."
+  },
+  "Skills": {
+    "title": "Habilidades técnicas"
+  },
+  "Education": {
+    "title": "Educación",
+    "first": {
+      "workingAs": "Desarrollador Web Full Stack",
+      "location": "Saint-Gobain, Arboç (España)",
+      "duration": "2025-presente",
+      "description": "Actualmente estoy trabajando como desarrollador web full stack en Saint-Gobain, donde desarrollo y mantengo aplicaciones internas para mejorar la eficiencia de los trabajadores."
+    },
+    "second": {
+      "workingAs": "Asistente de Informática",
+      "location": "Computronic, Clonakilty (Irlanda)",
+      "duration": "2024",
+      "description": "Fui seleccionado para trabajar en Irlanda para realizar mi inglés con el proyecto de Erasmus+ donde mejoré mis habilidades lingüísticas y también mis habilidades informáticas."
+    },
+    "third": {
+      "workingAs": "Asistente de Informática",
+      "location": "Forum Calafell, Calafell (España)",
+      "duration": "2024",
+      "description": "Trabajé como asistente de informática en Forum Calafell, donde ayudé a mantener ordenadores, sitios web y también fui administrador de las redes sociales subiendo cada día contenido."
+    }
+  },
+  "Contact": {
+    "title": "Contacto"
+  }
+}

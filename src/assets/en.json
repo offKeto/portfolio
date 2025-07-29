@@ -1,0 +1,38 @@
+{
+  "Menu": {
+    "AboutMe": "About Me",
+    "Skills": "Technical skills",
+    "Education": "Education",
+    "Contact": "Contact"
+  },
+  "AboutMe": {
+    "introduction": "Hi there! I'm Derek and I'm just a trainee web developer."
+  },
+  "Skills": {
+    "title": "Technical skills"
+  },
+  "Education": {
+    "title": "Education",
+    "first": {
+      "workingAs": "Full Stack Web Developer",
+      "location": "Saint-Gobain, Arboç (Spain)",
+      "duration": "2025-present",
+      "description": "I'm currently working as a full stack web developer in Saint-Gobain, where I develop and maintain internal applications to improve the efficiency for the workers."
+    },
+    "second": {
+      "workingAs": "IT Assistant",
+      "location": "Computronic, Clonakilty (Ireland)",
+      "duration": "2024",
+      "description": "I was selected to work in Ireland to improve my English with the Erasmus+ project where I enhanced my language skills and my IT skills too."
+    },
+    "third": {
+      "workingAs": "IT Assistant",
+      "location": "Forum Calafell, Calafell (Spain)",
+      "duration": "2024",
+      "description": "I worked as an IT assistant at Forum Calafell, where I helped maintain computers and websites, and I also managed social media, uploading content every day."
+    }
+  },
+  "Contact": {
+    "title": "Contact"
+  }
+}

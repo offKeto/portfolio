@@ -1,3 +1,9 @@
+<script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+</script>
+
 <template>
   <div
     class="flex flex-col pt-10 xl:pt-30 md:pt-20 md:pb-20 gap-5 justify-center items-center"
@@ -41,7 +47,7 @@
           </g>
         </svg>
       </a>
-      Hi there! I'm Derek and I'm just a trainee amateur web developer.
+      {{ t('AboutMe.introduction') }}
     </h1>
     <p
       class="xl:text-xl text-lg mx-5 text-center font-(family-name:--font-slogan) tracking-widest font-extralight"
