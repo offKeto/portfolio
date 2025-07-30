@@ -6,12 +6,12 @@ const { t } = useI18n();
 
 <template>
   <div
-    class="flex flex-col pt-10 xl:pt-30 md:pt-20 md:pb-20 gap-5 justify-center items-center"
+    class="flex flex-col pt-10 xl:pt-30 md:pt-20 md:pb-20 gap-5 justify-center items-center z-1000"
   >
     <img
       src="/src/assets/img.webp"
       alt="Image of Derek"
-      class="w-40 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
+      class="w-40 bg-slate-300 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
     />
     <h1
       class="xl:text-2xl text-xl flex mx-20 flex-col md:flex-row items-center text-justify gap-4"

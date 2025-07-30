@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import LanguageButton from './LanguageButton.vue';
 
 const { t, locale } = useI18n();
 const props = defineProps({
@@ -11,6 +12,7 @@ const props = defineProps({
 });
 
 const showMenu = ref(true);
+const showMenuSm = ref(false);
 let lastScrollY = window.scrollY;
 
 const handleScroll = () => {
@@ -22,121 +24,133 @@ const handleScroll = () => {
   lastScrollY = window.scrollY;
 };
 
+const toggleMenuSm = () => {
+  showMenuSm.value = !showMenuSm.value;
+};
+
 const changeLanguage = (lang) => {
   locale.value = lang;
 };
 
+const isMdOrLarger = ref(window.innerWidth >= 768);
+
+const handleResize = () => {
+  isMdOrLarger.value = window.innerWidth >= 768;
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleResize);
 });
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', handleResize);
 });
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <div
-      class="flex justify-center items-center fixed top-0 left-0 w-full z-100 transform transition-transform duration-300 ease-in-out"
-      :style="{ transform: showMenu ? 'translateY(0)' : 'translateY(-100%)' }"
+  <button
+    v-if="!showMenuSm"
+    @click="toggleMenuSm"
+    class="fixed md:hidden right-5 top-5 transform transition-all z-1000 hover:cursor-pointer bg-gray-500/20 hover:bg-gray-500/40 rounded-xl"
+  >
+    <svg
+      width="50"
+      height="50"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <div
-        class="bg-(--color2) text-sm md:text-md xl:text-xl 2xl:text-2xl mt-5 rounded-full md:px-5 px-2 shadow-xl flex gap-5 font-(family-name:--font-menu)"
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
+        fill="#ffffff"
+      />
+    </svg>
+  </button>
+  <div
+    class="fixed flex flex-row justify-center md:justify-center h-full md:items-center md:bottom-auto md:h-auto md:left-0 w-full z-10 transform transition-transform duration-300"
+    :class="{
+      'bg-gray-900/40': showMenuSm,
+      hidden: !showMenuSm,
+    }"
+  >
+    <nav
+      class="shadow-xl fixed right-0 h-auto md:right-auto rounded-bl-lg bg-(--color2) pt-5 w-auto text-xl 2xl:text-2xl md:mt-20 md:px-5 flex flex-col md:flex-row py-2 md:py-0 px-4 md:rounded-full gap-5 font-(family-name:--font-menu) transform transition-transform duration-300 ease-in-out items-end justify-center"
+      :style="{
+        transform: isMdOrLarger
+          ? showMenu
+            ? 'translateY(0)'
+            : 'translateY(-250%)'
+          : showMenuSm
+          ? 'translateX(0)'
+          : 'translateX(100%)',
+      }"
+    >
+      <button
+        v-if="!isMdOrLarger"
+        @click="toggleMenuSm"
+        class="md:hidden transform transition-all z-1000 hover:cursor-pointer bg-gray-500/20 hover:bg-gray-500/40 rounded-xl"
       >
-        <button
-          class="hover:text-slate-400 hover:cursor-pointer transition-colors"
-          @click="props.scrollTo('about-me')"
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 -0.5 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          {{ t('Menu.AboutMe') }}
-        </button>
-        <button
-          class="hover:text-slate-400 hover:cursor-pointer transition-colors"
-          @click="props.scrollTo('skills')"
-        >
-          {{ t('Menu.Skills') }}
-        </button>
-        <button
-          class="hover:text-slate-400 hover:cursor-pointer transition-colors"
-          @click="props.scrollTo('education')"
-        >
-          {{ t('Menu.Education') }}
-        </button>
-        <button
-          class="hover:text-slate-400 hover:cursor-pointer transition-colors"
-          @click="props.scrollTo('contact')"
-        >
-          {{ t('Menu.Contact') }}
-        </button>
+          <path
+            d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z"
+            fill="#ffffff"
+          />
+        </svg>
+      </button>
+      <button
+        class="hover:text-slate-400 hover:cursor-pointer transition-colors"
+        @click="props.scrollTo('about-me')"
+      >
+        {{ t('Menu.AboutMe') }}
+      </button>
+      <button
+        class="hover:text-slate-400 hover:cursor-pointer transition-colors"
+        @click="props.scrollTo('skills')"
+      >
+        {{ t('Menu.Skills') }}
+      </button>
+      <button
+        class="hover:text-slate-400 hover:cursor-pointer transition-colors"
+        @click="props.scrollTo('education')"
+      >
+        {{ t('Menu.Education') }}
+      </button>
+      <button
+        class="hover:text-slate-400 hover:cursor-pointer transition-colors"
+        @click="props.scrollTo('contact')"
+      >
+        {{ t('Menu.Contact') }}
+      </button>
+      <div v-if="!isMdOrLarger">
+        <LanguageButton @changeLanguage="changeLanguage" />
       </div>
-    </div>
+    </nav>
+  </div>
 
-    <!-- Cambiar idiomas -->
-    <div
-      class="flex items-center z-100 fixed top-4.5 right-10 transform transition-transform duration-300 ease-in-out"
-      :style="{ transform: showMenu ? 'translateX(10px)' : 'translateX(300%)' }"
-    >
-      <button
-        v-if="locale === 'es'"
-        @click="changeLanguage('en')"
-        title="English"
-      >
-        <!-- Bandera UK -->
-        <svg
-          viewBox="0 0 36 36"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          aria-hidden="true"
-          role="img"
-          class="hover:scale-110 hover:cursor-pointer transition-transform w-6 md:w-7 xl:w-10 2xl:w-12"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path
-            fill="#00247D"
-            d="M0 9.059V13h5.628zM4.664 31H13v-5.837zM23 25.164V31h8.335zM0 23v3.941L5.63 23zM31.337 5H23v5.837zM36 26.942V23h-5.631zM36 13V9.059L30.371 13zM13 5H4.664L13 10.837z"
-          ></path>
-          <path
-            fill="#CF1B2B"
-            d="M25.14 23l9.712 6.801a3.977 3.977 0 0 0 .99-1.749L28.627 23H25.14zM13 23h-2.141l-9.711 6.8c.521.53 1.189.909 1.938 1.085L13 23.943V23zm10-10h2.141l9.711-6.8a3.988 3.988 0 0 0-1.937-1.085L23 12.057V13zm-12.141 0L1.148 6.2a3.994 3.994 0 0 0-.991 1.749L7.372 13h3.487z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M36 21H21v10h2v-5.836L31.335 31H32a3.99 3.99 0 0 0 2.852-1.199L25.14 23h3.487l7.215 5.052c.093-.337.158-.686.158-1.052v-.058L30.369 23H36v-2zM0 21v2h5.63L0 26.941V27c0 1.091.439 2.078 1.148 2.8l9.711-6.8H13v.943l-9.914 6.941c.294.07.598.116.914.116h.664L13 25.163V31h2V21H0zM36 9a3.983 3.983 0 0 0-1.148-2.8L25.141 13H23v-.943l9.915-6.942A4.001 4.001 0 0 0 32 5h-.663L23 10.837V5h-2v10h15v-2h-5.629L36 9.059V9zM13 5v5.837L4.664 5H4a3.985 3.985 0 0 0-2.852 1.2l9.711 6.8H7.372L.157 7.949A3.968 3.968 0 0 0 0 9v.059L5.628 13H0v2h15V5h-2z"
-          ></path>
-          <path fill="#CF1B2B" d="M21 15V5h-6v10H0v6h15v10h6V21h15v-6z"></path>
-        </svg>
-      </button>
-      <button
-        v-else-if="locale === 'en'"
-        @click="changeLanguage('es')"
-        title="Español"
-      >
-        <!-- Bandera España -->
-        <svg
-          viewBox="0 0 36 36"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          aria-hidden="true"
-          role="img"
-          class="hover:scale-110 hover:cursor-pointer transition-transform w-6 md:w-7 xl:w-10 2xl:w-12"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path
-            fill="#C60A1D"
-            d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"
-          ></path>
-          <path fill="#FFC400" d="M0 12h36v12H0z"></path>
-          <path fill="#EA596E" d="M9 17v3a3 3 0 1 0 6 0v-3H9z"></path>
-          <path fill="#F4A2B2" d="M12 16h3v3h-3z"></path>
-          <path fill="#DD2E44" d="M9 16h3v3H9z"></path>
-          <ellipse fill="#EA596E" cx="12" cy="14.5" rx="3" ry="1.5"></ellipse>
-          <ellipse fill="#FFAC33" cx="12" cy="13.75" rx="3" ry=".75"></ellipse>
-          <path fill="#99AAB5" d="M7 16h1v7H7zm9 0h1v7h-1z"></path>
-          <path
-            fill="#66757F"
-            d="M6 22h3v1H6zm9 0h3v1h-3zm-8-7h1v1H7zm9 0h1v1h-1z"
-          ></path>
-        </svg>
-      </button>
+  <!-- Cambiar idiomas -->
+  <div
+    class="fixed md:flex md:items-center z-1000 md:top-4.5 md:right-10 transform transition-transform duration-300 ease-in-out justify-center items-center"
+    :style="{
+      transform: isMdOrLarger
+        ? showMenu
+          ? 'translateX(0)'
+          : 'translateX(400%)'
+        : showMenuSm
+        ? 'translateX(0)'
+        : 'translateX(500%)',
+    }"
+  >
+    <div v-if="isMdOrLarger">
+      <LanguageButton @changeLanguage="changeLanguage" />
     </div>
   </div>
 </template>
