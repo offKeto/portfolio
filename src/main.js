@@ -11,8 +11,8 @@ const i18n = createI18n({
   locale: window.navigator.language.split('-')[0],
   fallbackLocale: 'en',
   messages: {
-    en: es,
-    es: en,
+    en: en,
+    es: es,
   },
 });
 
