@@ -69,15 +69,18 @@ onUnmounted(() => {
       />
     </svg>
   </button>
+
+  <div class="fixed bg-gray-900/40 z-10" :class="{ hidden: !showMenuSm }" />
   <div
+    @click="toggleMenuSm"
     class="fixed flex flex-row justify-center md:justify-center h-full md:items-center md:bottom-auto md:h-auto md:left-0 w-full z-10 transform transition-transform duration-300"
     :class="{
       'bg-gray-900/40': showMenuSm,
-      hidden: !showMenuSm,
     }"
   >
     <nav
-      class="z-100 shadow-xl fixed right-0 h-auto md:right-auto rounded-bl-lg bg-(--color2) pt-5 w-auto text-xl 2xl:text-2xl md:mt-20 md:px-5 flex flex-col md:flex-row py-2 md:py-0 px-4 md:rounded-full gap-5 font-(family-name:--font-menu) transform transition-transform duration-300 ease-in-out items-end justify-center"
+      @click.stop
+      class="z-10 shadow-xl fixed right-0 h-auto md:right-auto rounded-bl-lg bg-(--color2) pt-5 w-auto text-xl 2xl:text-2xl md:mt-20 md:px-5 flex flex-col md:flex-row py-2 md:py-0 px-4 md:rounded-full gap-5 font-(family-name:--font-menu) transform transition-transform duration-300 ease-in-out items-end justify-center"
       :style="{
         transform: isMdOrLarger
           ? showMenu
@@ -88,7 +91,7 @@ onUnmounted(() => {
           : 'translateX(100%)',
       }"
     >
-      <button
+      <!-- <button
         v-if="!isMdOrLarger"
         @click="toggleMenuSm"
         class="md:hidden transform transition-all z-1000 hover:cursor-pointer bg-gray-500/20 hover:bg-gray-500/40 rounded-xl"
@@ -105,7 +108,7 @@ onUnmounted(() => {
             fill="#ffffff"
           />
         </svg>
-      </button>
+      </button> -->
       <button
         class="hover:text-slate-400 hover:cursor-pointer transition-colors"
         @click="props.scrollTo('about-me')"

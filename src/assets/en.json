@@ -6,7 +6,7 @@
     "Contact": "Contact"
   },
   "AboutMe": {
-    "introduction": "Hi there! I'm Derek and I'm just a trainee web developer."
+    "introduction": "Hi there! I'm Derek, I'm a trainee web developer with a lot of enthusiasm to learn."
   },
   "Skills": {
     "title": "Technical skills"
@@ -14,10 +14,10 @@
   "Education": {
     "title": "Education",
     "first": {
-      "workingAs": "Full Stack Web Developer",
+      "workingAs": "Junior Web Developer",
       "location": "Saint-Gobain, Arboç (Spain)",
       "duration": "2025-present",
-      "description": "I'm currently working as a full stack web developer in Saint-Gobain, where I develop and maintain internal applications to improve the efficiency for the workers."
+      "description": "I'm currently working as a junior web developer in Saint-Gobain, where I develop and maintain internal applications to improve the efficiency for the workers."
     },
     "second": {
       "workingAs": "IT Assistant",
@@ -28,7 +28,7 @@
     "third": {
       "workingAs": "IT Assistant",
       "location": "Forum Calafell, Calafell (Spain)",
-      "duration": "2024",
+      "duration": "2023-2024",
       "description": "I worked as an IT assistant at Forum Calafell, where I helped maintain computers and websites, and I also managed social media, uploading content every day."
     }
   },

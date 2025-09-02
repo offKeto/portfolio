@@ -6,7 +6,7 @@
     "Contact": "Contacto"
   },
   "AboutMe": {
-    "introduction": "¡Hola! Soy Derek y soy un joven desarrollador web en formación."
+    "introduction": "¡Hola! Soy Derek, soy un joven desarrollador web en formación con ganas de aprender."
   },
   "Skills": {
     "title": "Habilidades técnicas"
@@ -14,10 +14,10 @@
   "Education": {
     "title": "Educación",
     "first": {
-      "workingAs": "Desarrollador Web Full Stack",
+      "workingAs": "Desarrollador Web Junior",
       "location": "Saint-Gobain, Arboç (España)",
       "duration": "2025-presente",
-      "description": "Actualmente estoy trabajando como desarrollador web full stack en Saint-Gobain, donde desarrollo y mantengo aplicaciones internas para mejorar la eficiencia de los trabajadores."
+      "description": "Actualmente estoy trabajando como desarrollador web junior en Saint-Gobain, donde desarrollo y mantengo aplicaciones internas para mejorar la eficiencia de los trabajadores."
     },
     "second": {
       "workingAs": "Asistente de Informática",
@@ -28,7 +28,7 @@
     "third": {
       "workingAs": "Asistente de Informática",
       "location": "Forum Calafell, Calafell (España)",
-      "duration": "2024",
+      "duration": "2023-2024",
       "description": "Trabajé como asistente de informática en Forum Calafell, donde ayudé a mantener ordenadores, sitios web y también fui administrador de las redes sociales subiendo cada día contenido."
     }
   },
