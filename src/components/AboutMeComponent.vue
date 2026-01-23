@@ -9,8 +9,8 @@ const { t } = useI18n();
     class="flex flex-col pt-10 xl:pt-30 md:pt-20 md:pb-20 gap-5 justify-center items-center z-1000"
   >
     <img
-      src="/src/assets/img.webp"
-      alt="Image of Derek"
+      src="/src/assets/img.jpg"
+      alt="Image of me"
       class="w-40 bg-slate-300 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
     />
     <h1
