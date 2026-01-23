@@ -17,7 +17,7 @@ function scrollTo(id) {
   if (el) {
     lenis.scrollTo(el, {
       immediate: false,
-      duration: 1,
+      duration: 0.5,
       easing: (t) => t,
     });
     el.classList.add('section-enter');

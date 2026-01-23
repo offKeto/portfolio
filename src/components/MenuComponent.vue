@@ -87,8 +87,8 @@ onUnmounted(() => {
             ? 'translateY(0)'
             : 'translateY(-250%)'
           : showMenuSm
-          ? 'translateX(0)'
-          : 'translateX(100%)',
+            ? 'translateX(0)'
+            : 'translateX(100%)',
       }"
     >
       <!-- <button
@@ -148,8 +148,8 @@ onUnmounted(() => {
           ? 'translateX(0)'
           : 'translateX(400%)'
         : showMenuSm
-        ? 'translateX(0)'
-        : 'translateX(500%)',
+          ? 'translateX(0)'
+          : 'translateX(500%)',
     }"
   >
     <div v-if="isMdOrLarger">
