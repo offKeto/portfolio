@@ -11,7 +11,7 @@ const { t } = useI18n();
     <img
       src="/src/assets/img.jpg"
       alt="Image of me"
-      class="w-40 bg-slate-300 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover object-top"
+      class="w-40 bg-slate-300 h-40 md:w-48 md:h-48 xl:w-80 xl:h-80 border md:border-2 xl:border-3 my-5 rounded-full object-cover"
     />
     <h1
       class="xl:text-2xl text-xl flex mx-20 flex-col md:flex-row items-center text-justify gap-4"
