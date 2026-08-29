@@ -16,20 +16,20 @@
     "first": {
       "workingAs": "Junior Web Developer",
       "location": "Saint-Gobain, Arboç (Spain)",
-      "duration": "2025-present",
-      "description": "I'm currently working as a junior web developer in Saint-Gobain, where I develop and maintain internal applications to improve the efficiency for the workers."
+      "duration": "2025-2026",
+      "description": "Development and implementation of internal web applications to optimize and digitize plant floor workflows. Creation of interactive and reactive interfaces using Vue.js, TypeScript, and TailwindCSS / PrimeVue. Backend development of business logic and service integration using Laravel."
     },
     "second": {
       "workingAs": "IT Assistant",
       "location": "Computronic, Clonakilty (Ireland)",
       "duration": "2024",
-      "description": "I was selected to work in Ireland to improve my English with the Erasmus+ project where I enhanced my language skills and my IT skills too."
+      "description": "Provided technical assistance and customer support entirely in English within an international professional environment. Edited and produced corporate graphic materials using Adobe Photoshop and Adobe Illustrator."
     },
     "third": {
       "workingAs": "IT Assistant",
       "location": "Forum Calafell, Calafell (Spain)",
       "duration": "2023-2024",
-      "description": "I worked as an IT assistant at Forum Calafell, where I helped maintain computers and websites, and I also managed social media, uploading content every day."
+      "description": "Managed, updated, and continuously maintained two corporate websites using the WordPress content management system. Designed advertising materials, posters, and promotional brochures."
     }
   },
   "Contact": {
